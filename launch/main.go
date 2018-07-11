@@ -1,13 +1,14 @@
 package main
 
 import (
+	//"github.com/rightjoin/aero/conf"
 	"github.com/rightjoin/aqua"
 	imdb "imdb/movies/service"
 )
 
+// main function
 func main() {
-	service := aqua.NewRestServer()
-
-	service.AddService(&imdb.Movies{})
-	server.RunWith(conf.Int("server.port", 8090), true)
+	server := aqua.NewRestServer()
+	server.AddService(&imdb.Movies{})
+	server.Run()
 }

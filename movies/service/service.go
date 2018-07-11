@@ -1,8 +1,10 @@
 package service
 
 import (
+	//"github.com/rightjoin/aero"
+	//"github.com/rightjoin/aero/conf"
+	"fmt"
 	"github.com/rightjoin/aqua"
-	"github.com/tolexo/aero/conf"
 	"imdb/movies/util"
 )
 
@@ -14,17 +16,19 @@ type Movies struct {
 }
 
 //GetMoviesList : get movies list based of filter
-func (mvs *Movies) GetMoviesList(j aqua.Aide) {
+func (mvs *Movies) GetMoviesList(j aqua.Aide) string {
 
-	util.GetMoviesList(j)
+	str := util.GetMoviesList(j)
+	fmt.Println(str)
+	return str
 }
 
 //AddMovies : add new movies
-func (mvs *Movies) AddMovies(j aqua.Aide) {
-
+func (mvs *Movies) AddMovies(j aqua.Aide) string {
+	return "gtr"
 }
 
-//UpdateMovie: update movie details
-func (mvs *Movies) UpdateMovie(j aqua.Aide) {
-
+// //UpdateMovie: update movie details
+func (mvs *Movies) UpdateMovie(j aqua.Aide) string {
+	return "ftr"
 }
