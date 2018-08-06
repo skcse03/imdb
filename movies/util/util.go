@@ -17,6 +17,8 @@ func GetMoviesList(j aqua.Aide) (interface{}, error) {
 		db       *gorm.DB
 		err      error
 	)
+
+	/// saurabh kumar
 	if db, err = dbConn(); err == nil {
 		sql := `Select mv.movies_id, 
 				mv.name as movie_name,
@@ -102,7 +104,7 @@ func GetActor(j aqua.Aide) (response []model.Actor, err error) {
 		db *gorm.DB
 	)
 	if db, err = dbConn(); err == nil {
-		actorList := `SELECT actor_id, name, bio FROM actors;`
+		actorList := `SELECT actor_id, name, bio,dob,sex FROM actors;`
 		err = db.Raw(actorList).Find(&response).Error
 	}
 	return
@@ -114,7 +116,7 @@ func GetProducer(j aqua.Aide) (response []model.Producer, err error) {
 		db *gorm.DB
 	)
 	if db, err = dbConn(); err == nil {
-		producerList := `SELECT producer_id, name, bio FROM producers;`
+		producerList := `SELECT producer_id, name, bio,dob,bio FROM producers;`
 		err = db.Raw(producerList).Find(&response).Error
 	}
 	return
